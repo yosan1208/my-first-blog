@@ -7,18 +7,13 @@
        <h1><a href="https://twitter.com/home">Twitterアカウントへ</a></h1>
     </div>
 
-    <div>
-       <p>編集担当: いきくさ</p>
-       <p>編集日時: 2020.06.19</p>
-       <h2><a href="">My First Post</a></h2>
-    <p>アニョハセヨ！ こんにちは！よろしくお願いします</p>
-    </div>
-
-    <div>
-       <p>公開日: 2020.06.19, 12:00</p>
-       <h2><a href="">2番目の投稿</a></h2>
-       <p>こんにちは！よろしくおねがいします</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
     
     <div>
     <p>Hi there!</p>
